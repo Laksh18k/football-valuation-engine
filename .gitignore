@@ -1,0 +1,42 @@
+# ── Virtual environment ───────────────────────────────────────────────
+# Your venv is the ./Football folder (bin, lib, include, pyvenv.cfg...)
+/Football/
+venv/
+.venv/
+env/
+
+# ── Tooling and automation leftovers ──────────────────────────────────
+/.agents/
+/downloaded_files/
+
+# ── Raw / source data (large, and covered by their providers' terms) ──
+# Download these yourself; see the README for sources.
+/appearances.csv
+/players.csv
+/player_valuations.csv
+/data/fbref_raw/
+
+# Intermediate dataset: the app uses data/final_*.csv first
+/data/cleaned_model_data.csv
+
+# If data/final_*.csv or models/*.joblib ever exceed 100 MB, stop tracking
+# them here and use Git LFS instead (or host them elsewhere):
+# /data/final_model_data.csv
+# /data/final_gk_data.csv
+# /models/*.joblib
+
+# ── Python ────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+
+# ── Secrets ───────────────────────────────────────────────────────────
+.env
+.streamlit/secrets.toml
+
+# ── Editor / OS ───────────────────────────────────────────────────────
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

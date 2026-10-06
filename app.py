@@ -456,7 +456,7 @@ def show_drivers(model_exp, raw, base_eur, pred_eur, k=10):
     with st.expander("Technical view (SHAP waterfall, log scale)"):
         shap.plots.waterfall(model_exp, max_display=12, show=False)
         fig2 = plt.gcf()
-        st.pyplot(fig2, clear_figure=True)
+        st.pyplot(fig2)
         plt.close(fig2)
 
 

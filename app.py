@@ -450,13 +450,15 @@ def show_drivers(model_exp, raw, base_eur, pred_eur, k=10):
     fr = driver_frame(model_exp, raw, k)
     st.caption(f"Starting from the model's average player ({fmt_eur(base_eur)}), each bar scales the value "
                f"up or down. Together they give {fmt_eur(pred_eur)}.")
+    
     fig = plot_drivers(fr)
-    st.pyplot(fig, clear_figure=True)
+    st.pyplot(fig)  
     plt.close(fig)
+    
     with st.expander("Technical view (SHAP waterfall, log scale)"):
+        fig2 = plt.figure() # Force a fresh figure context
         shap.plots.waterfall(model_exp, max_display=12, show=False)
-        fig2 = plt.gcf()
-        st.pyplot(fig2)
+        st.pyplot(fig2)  
         plt.close(fig2)
 
 
